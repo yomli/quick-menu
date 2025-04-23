@@ -1,7 +1,7 @@
 package xyz.imcodist.quickmenu.ui.surfaces;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.opengl;
+import com.mojang.blaze3d.opengl.GlStateManager;
 import io.wispforest.owo.ui.core.OwoUIDrawContext;
 import io.wispforest.owo.ui.core.ParentComponent;
 import io.wispforest.owo.ui.core.Surface;
