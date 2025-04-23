@@ -1,6 +1,7 @@
 package xyz.imcodist.quickmenu.ui.surfaces;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.opengl;
 import io.wispforest.owo.ui.core.OwoUIDrawContext;
 import io.wispforest.owo.ui.core.ParentComponent;
 import io.wispforest.owo.ui.core.Surface;
@@ -25,14 +26,14 @@ public class SwitcherSurface implements Surface {
         int sourceX = (isHeader) ? 0 : 24;
 
         // Make sure the background renders as transparent.
-        if (!isHeader) RenderSystem.enableBlend();
+        if (!isHeader) GlStateManager._enableBlend();
         RenderSystem.setShaderColor(1, 1, 1, 1);
 
         // Draws the texture as a 9 slice.
         drawNineSlicedTexture(context, x, y, width, height, sourceX, 0, 6, 6, 12, 12, 52, 50);
 
         // Undo previous render system changes.
-        if (!isHeader) RenderSystem.disableBlend();
+        if (!isHeader) GlStateManager._disableBlend();
         RenderSystem.setShaderColor(1, 1, 1, 1);
     }
 
